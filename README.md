@@ -53,6 +53,7 @@ React + TypeScript Frontend
 Spring Boot Backend
         ↓ Spring Data JPA
 PostgreSQL Database
+```
 
 
 ### Why this section matters
