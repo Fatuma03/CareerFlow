@@ -24,6 +24,7 @@
   border: 1px solid rgba(127, 127, 127,0.25);
   border-radius: 16px;
   display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 18px;
   margin-bottom: 32px;
 }
@@ -245,6 +246,9 @@
   .app{
     padding: 20px;
   }
+  .application-form{
+    grid-template-columns: 1fr;
+  }
   .app-header h1{
     font-size: 30px;
   }
@@ -263,11 +267,23 @@
   border-color: #2563eb;
   box-shadow: 0 0 0 3px rgba(37,99,235,0.2);
 }
+.full-width{
+  grid-column: 1/-1;
+}
+.form-actions{
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
 .primary-button,
 .secondary-button,
 .edit-button,
 .delete-button,
 .toolbar button{
   transition: background-color 0.2s ease;
+}
+.required-star{
+  color: red;
 }
 

@@ -291,7 +291,10 @@ export default function App(){
       </header>
       
       <form className='application-form' onSubmit={handleApplication}>
-      <label >Company
+      <label >
+        <span>
+        Company <span className='required-star'>*</span>
+        </span>
         <input type="text"
         name='company'
         value ={formData.company}
@@ -299,7 +302,10 @@ export default function App(){
         required
         />
       </label>
-      <label >Role
+      <label >
+        <span>
+        Role <span className='required-star'>*</span>
+        </span>
         <input type="text"
         name= 'role'
         value ={formData.role}
@@ -308,7 +314,10 @@ export default function App(){
         />
       </label>
       
-      <label >Date-Applied
+      <label >
+        <span>
+          Date-Applied <span className='required-star'>*</span>
+          </span>
         <input type="date"
         name='dateApplied'
         value ={formData.dateApplied}
@@ -316,7 +325,10 @@ export default function App(){
         required
         />
       </label>
-      <label >Status
+      <label >
+        <span>
+        Status <span className='required-star'>*</span>
+        </span>
         <select 
         name= 'status'
         value ={formData.status}
@@ -332,13 +344,6 @@ export default function App(){
         </select>
       </label>
        
-      <label >JobUrl
-        <input type="url"
-        name='jobUrl'
-        value ={formData.jobUrl}
-        onChange={handleChange}
-        />
-      </label>
       <label >Follow-Up-Date
         <input type="date"
         name= 'followUpDate'
@@ -353,16 +358,24 @@ export default function App(){
         onChange={handleChange}
         />
       </label>
-      
-      <label > Notes
+      <label className='full-width'>JobUrl
+        <input type="url"
+        name='jobUrl'
+        value ={formData.jobUrl}
+        onChange={handleChange}
+        />
+      </label>
+      <label className='full-width'> Notes
         <textarea 
         name="notes"
         value={formData.notes}
         onChange={handleChange}
         ></textarea>
       </label>
+      <div className='form-actions'>
       <button type='submit' className='primary-button'>{editingId===null?'Add Application': 'Save Changes'}</button>
       {editingId!==null && (<button className='secondary-button' type='button' onClick={handleCancel}>Cancel</button>)}
+      </div>
       </form>
       <section className='dashboard'>
       <p>Total Applications: {applications.length}</p>
