@@ -4,6 +4,10 @@ CareerFlow is a full-stack job application tracking web application built to hel
 
 It allows users to track applications, update application statuses, manage follow-up dates, search and filter applications, and monitor their overall application progress through a dashboard.
 
+## Live Demo
+
+[View CareerFlow Live](https://career-flow-rouge.vercel.app)
+
 ## Features
 
 - Create, view, edit, and delete job applications
@@ -73,13 +77,13 @@ Spring Data JPA handles communication between the backend and PostgreSQL.
 
 ## API Endpoints
 
-| Method | Endpoint | Purpose |
-|---|---|---|
-| POST | `/applications` | Create a new application |
-| GET | `/applications` | Get all applications |
-| GET | `/applications/{id}` | Get one application by ID |
-| PUT | `/applications/{id}` | Update an existing application |
-| DELETE | `/applications/{id}` | Delete an application |
+| Method | Endpoint             | Purpose                        |
+| ------ | -------------------- | ------------------------------ |
+| POST   | `/applications`      | Create a new application       |
+| GET    | `/applications`      | Get all applications           |
+| GET    | `/applications/{id}` | Get one application by ID      |
+| PUT    | `/applications/{id}` | Update an existing application |
+| DELETE | `/applications/{id}` | Delete an application          |
 
 ## Running Locally
 
