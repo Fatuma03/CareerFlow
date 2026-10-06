@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = { "http://localhost:5173",
+        "https://career-flow-rouge.vercel.app" })
 @RestController
 public class ApplicationController {
     private final ApplicationService applicationService;
