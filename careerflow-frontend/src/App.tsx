@@ -50,6 +50,7 @@ function ApplicationCard({id, company, role, status, onDelete, onEdit, dateAppli
   )
   
 }
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080'
 
 export default function App(){
   const [applications, setApplications] =useState<Application[]>([])
@@ -73,7 +74,7 @@ export default function App(){
 
   async function handleLoadApplication() {
     try{
-    const response = await fetch('http://localhost:8080/applications')
+    const response = await fetch(`${API_URL}/applications`)
     if(!response.ok){
       setError("Could not load Applications" )
       setLoading(false)
@@ -104,7 +105,7 @@ export default function App(){
     }
     try{
       if(editingId==null){
-        const response = await fetch('http://localhost:8080/applications',{
+        const response = await fetch(`${API_URL}/applications`,{
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -121,7 +122,7 @@ export default function App(){
       setTimeout(()=>{setSuccessMessage(null)},3000)
       setFormData({company:'', role:'', dateApplied:'',status:'Applied', jobUrl:'',notes:'',location:'',followUpDate:''})
     }else{
-      const response = await fetch(`http://localhost:8080/applications/${editingId}`,{
+      const response = await fetch(`${API_URL}/applications/${editingId}`,{
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -164,7 +165,7 @@ export default function App(){
     }
     setError(null)
     try{
-    const response = await fetch(`http://localhost:8080/applications/${id}`,{
+    const response = await fetch(`${API_URL}/applications/${id}`,{
       method: 'DELETE'
     })
     if(!response.ok){
